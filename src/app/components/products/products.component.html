@@ -1,0 +1,10 @@
+<div class="principal-container">
+  <div class="text">All products</div>
+  <div class="products-container">
+    <div *ngFor="let product of products">
+      <img (click)="getAProduct(product.id)" [src]="product.api_featured_image" alt="">
+      <div class="text">{{product.name}}</div>
+      <div class="price text">{{product.price |currency}}</div>
+    </div>
+  </div>
+</div>
