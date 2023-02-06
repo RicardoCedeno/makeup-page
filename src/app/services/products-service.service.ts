@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductsServiceService {
-  url:string="http://makeup-api.herokuapp.com/api/v1/products.json"
+  url:string="http://makeup-api.herokuapp.com/api/v1/products.json/"
 
   constructor(private httpClient:HttpClient) { }
 
@@ -16,6 +16,6 @@ export class ProductsServiceService {
   }
 
   getAProduct(id:number):Observable<product>{
-    return this.httpClient.get<product>("http://makeup-api.herokuapp.com/api/v1/products/" + id +".json")
+    return this.httpClient.get<product>("http://makeup-api.herokuapp.com/api/v1/products/" + id +".json/")
   }
 }

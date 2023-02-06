@@ -1,13 +1,13 @@
 <img [src]="product.api_featured_image" alt="">
 <div class="title">{{product.name}}</div>
-<div class="title">{{product.price | currency}}</div>
+<div class="title">{{product.price}}</div>
 <div class="text">Available colors</div>
 <div class="colors">
   <div *ngFor="let color of product.product_colors">
     <div class="circle" style="background:{{color.hex_value}}"></div>
   </div>
 </div>
-<div class="text">{{product.description}}</div>
+<div [innerHTML]="product.description" class="text"></div>
 <div class="text">Category: {{product.category}}</div>
 <button class="amount-button">
   <div class="amount">
@@ -16,5 +16,5 @@
     <i class="fa-solid fa-plus" (click)="increase()"></i>
   </div>
 </button>
-<button class="cart-button">Add to cart</button>
+<button class="cart-button" (click)="addToCart()">Add to cart</button>
 

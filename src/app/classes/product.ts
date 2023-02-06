@@ -2,7 +2,7 @@ export class product {
   id:                 number;
   brand:              null | string;
   name:               string;
-  price:              null | string;
+  price:              string;
   price_sign:         PriceSign | null;
   currency:           Currency | null;
   image_link:         string;

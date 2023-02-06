@@ -1,0 +1,13 @@
+<div class="principal-container">
+  <div class="title">MY CART</div>
+  <div class="product" *ngFor="let product of cart">
+    <img [src]="product.image" alt="">
+    <div class="text-container">
+        <div class="name">{{product.name}}</div>
+        <div class="amount">Quantity: {{product.numberOfProducts}}</div>
+        <div class="subtotal">Subtotal: {{product.subtotal | currency}}</div>
+    </div>
+  </div>
+  <div class="total">Total: {{total}}</div>
+  <button>Finish Buying</button>
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartProduct } from 'src/app/classes/cart-product';
 import { product } from 'src/app/classes/product';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductsServiceService } from 'src/app/services/products-service.service';
 
 @Component({
@@ -12,9 +14,11 @@ export class ProductDetailsComponent implements OnInit {
   idProduct:number
   product:product = new product()
   numberOfProducts:number=1
-  constructor(private route:ActivatedRoute, private productsService:ProductsServiceService) {}
+  productList:CartProduct[]
+  constructor(private route:ActivatedRoute, private productsService:ProductsServiceService, private cartService:CartService) {}
   ngOnInit(): void {
     this.getProductDetails()
+    this.productList=this.cartService.productList
 
   }
 
@@ -33,6 +37,18 @@ export class ProductDetailsComponent implements OnInit {
     if(this.numberOfProducts>0){
       this.numberOfProducts--
     }
+  }
+
+  addToCart(){
+    var cartProduct:CartProduct=new CartProduct()
+    cartProduct.id=this.product.id;
+    cartProduct.name=this.product.name;
+    cartProduct.price=this.product.price;
+    cartProduct.image=this.product.api_featured_image
+    cartProduct.numberOfProducts=this.numberOfProducts
+    cartProduct.subtotal=+cartProduct.price*cartProduct.numberOfProducts
+    this.productList.push(cartProduct)
+    this.cartService.setCart(this.productList)
   }
 
 

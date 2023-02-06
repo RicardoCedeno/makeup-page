@@ -1,0 +1,67 @@
+img{
+  width: 30vw;
+  border: 1px solid var(--pink-secondary);
+  border-radius: 20px;
+}
+
+.title{
+  font-size: 5vw;
+  color: var(--pink-principal);
+  font-weight: 800;
+  text-align: center;
+  align-items: center;
+}
+.amount{
+  font-size: 5vw;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.subtotal{
+  font-size: 5vw;
+  color: var(--blue);
+  font-weight: 600;
+}
+.total{
+  font-size: 5vw;
+  color: var(--blue);
+  font-weight: 600;
+}
+.product{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-top: 10px;
+  gap: 7vw;
+}
+
+
+.name{
+  font-size: 10vw;
+  color: var(--pink-principal);
+}
+
+.price{
+  font-size: 6vw;
+  border: 2px solid var(--blue);
+  border-radius: 500px;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+}
+
+.text-container{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+}
+button{
+  background: var(--pink-secondary);
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 8vw;
+  color: white;
+  padding: 10px 40px 10px 40px;
+  border-radius: 500px;
+}
